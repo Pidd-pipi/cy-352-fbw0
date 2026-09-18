@@ -6,23 +6,25 @@
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "start": "node dist/index.js",
-    "dev": "tsx watch src/index.ts"
+    "dev": "tsx watch src/index.ts",
+    "dev:local": "MONGOMS_DISTRO=${MONGOMS_DISTRO:-ubuntu-22.04} MONGOMS_VERSION=${MONGOMS_VERSION:-8.0.20} tsx scripts/start-local.ts",
+    "test:e2e": "MONGOMS_DISTRO=${MONGOMS_DISTRO:-ubuntu-22.04} MONGOMS_VERSION=${MONGOMS_VERSION:-8.0.20} tsx scripts/e2e-test.ts"
   },
   "dependencies": {
-    "express": "^4.21.2",
-    "cors": "^2.8.5",
-    "helmet": "^8.0.0",
-    "dotenv": "^16.4.7",
-    "jsonwebtoken": "^9.0.2",
     "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
     "express-validator": "^7.2.0",
+    "helmet": "^8.0.0",
+    "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.9.2"
   },
   "devDependencies": {
-    "@types/node": "^22.10.5",
-    "@types/express": "^5.0.0",
     "@types/cors": "^2.8.17",
-    "typescript": "^5.7.2",
-    "tsx": "^4.19.2"
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.5",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
   }
 }

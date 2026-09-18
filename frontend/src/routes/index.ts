@@ -1,5 +1,5 @@
 export const routes = [
-  { path: "/", label: "运营总览" },
-  { path: "/resources", label: "资源管理" },
-  { path: "/analytics", label: "数据分析" },
+  { path: "/", label: "包厢预约" },
+  { path: "/#members", label: "会员储值" },
+  { path: "/#settlements", label: "结算记录" },
 ];

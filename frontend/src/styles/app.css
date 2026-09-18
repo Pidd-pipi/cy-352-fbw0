@@ -166,3 +166,157 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+/* 包厢预约与会员结算 */
+.topbar-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.panel {
+  margin-top: 26px;
+  border: 1px solid color-mix(in srgb, #19212e 13%, transparent);
+  border-radius: 8px;
+  padding: clamp(18px, 3vw, 30px);
+  background: color-mix(in srgb, #f4f7fb 88%, white 12%);
+  box-shadow: 0 18px 50px color-mix(in srgb, #19212e 8%, transparent);
+}
+
+.panel-title {
+  margin: 0 0 16px;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.panel-head .panel-title {
+  margin: 0;
+}
+
+.member-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.member-card {
+  border: 1px solid color-mix(in srgb, #19212e 12%, transparent);
+  border-radius: 8px;
+  padding: 14px 16px;
+  background: color-mix(in srgb, #ffffff 70%, #dfe8f4 30%);
+}
+
+.member-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.member-metric {
+  margin: 8px 0 0;
+  color: color-mix(in srgb, #19212e 70%, #3268b8 30%);
+}
+
+.member-metric b {
+  color: #19212e;
+  font-size: 17px;
+}
+
+.recharge-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+  align-items: center;
+}
+
+.availability-scroll {
+  overflow-x: auto;
+}
+
+.slot-table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 900px;
+  font-size: 13px;
+}
+
+.slot-table th,
+.slot-table td {
+  border: 1px solid color-mix(in srgb, #19212e 12%, transparent);
+  padding: 6px 8px;
+  text-align: center;
+}
+
+.slot-table th {
+  background: color-mix(in srgb, #3268b8 12%, transparent);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.room-col {
+  min-width: 150px;
+  text-align: left !important;
+}
+
+.room-col strong,
+.room-col .room-meta {
+  display: block;
+}
+
+.room-meta {
+  color: color-mix(in srgb, #19212e 62%, #3268b8 38%);
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+.slot-cell {
+  cursor: default;
+  white-space: nowrap;
+}
+
+.slot-free {
+  background: color-mix(in srgb, #3d8f5a 16%, transparent);
+  color: #256b41;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.slot-free:hover {
+  background: color-mix(in srgb, #3d8f5a 30%, transparent);
+}
+
+.slot-busy {
+  background: color-mix(in srgb, #cf5c36 18%, transparent);
+  color: #9c3f1f;
+}
+
+.booking-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.form-item {
+  width: 240px;
+}
+
+.hour-item {
+  width: 110px;
+}
+
+.form-summary {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: color-mix(in srgb, #19212e 72%, #3268b8 28%);
+}

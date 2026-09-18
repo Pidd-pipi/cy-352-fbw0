@@ -11,3 +11,15 @@ export const APP_THEME = {
   warm: "#cf5c36",
   surface: "#dfe8f4",
 };
+
+/** 营业时段：10:00 - 24:00 */
+export const BUSINESS_START_HOUR = 10;
+export const BUSINESS_END_HOUR = 24;
+
+export function formatYuan(cents: number): string {
+  return `¥${(cents / 100).toFixed(2)}`;
+}
+
+export function formatSlot(startHour: number, endHour: number): string {
+  return `${String(startHour).padStart(2, "0")}:00 - ${String(endHour).padStart(2, "0")}:00`;
+}
