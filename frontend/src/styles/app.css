@@ -166,3 +166,166 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+/* ---------------- 包厢预约与会员结算 ---------------- */
+.tab-bar {
+  width: min(1180px, calc(100vw - 32px));
+  margin: 20px auto 0;
+}
+
+.booking-page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.section-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.section-head h2 {
+  margin: 0 0 6px;
+  font-size: 24px;
+}
+
+.section-head p {
+  margin: 0;
+  color: color-mix(in srgb, #19212e 65%, transparent);
+  font-size: 14px;
+}
+
+.member-row {
+  margin: 0 !important;
+}
+
+.member-card {
+  margin-bottom: 0;
+}
+
+.member-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.level-tag {
+  margin-left: 8px;
+}
+
+.member-stats {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+  font-size: 14px;
+  color: color-mix(in srgb, #19212e 70%, transparent);
+}
+
+.member-stats strong {
+  font-size: 18px;
+  color: #19212e;
+  margin-left: 4px;
+}
+
+.panel {
+  height: 100%;
+}
+
+.panel-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-weight: 700;
+}
+
+.room-grid-block {
+  margin-bottom: 18px;
+}
+
+.room-grid-name {
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.room-grid-name .muted {
+  font-weight: 400;
+  font-size: 12px;
+  color: color-mix(in srgb, #19212e 55%, transparent);
+  margin-left: 8px;
+}
+
+.slot-grid {
+  display: grid;
+  grid-template-columns: repeat(14, 1fr);
+  gap: 4px;
+}
+
+.slot {
+  border-radius: 6px;
+  padding: 6px 0;
+  text-align: center;
+  font-size: 12px;
+  border: 1px solid transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.slot-time {
+  color: color-mix(in srgb, #19212e 60%, transparent);
+}
+
+.slot-free {
+  background: #e6f4ea;
+  border-color: #b7e2c4;
+  color: #1f7a3d;
+}
+
+.slot-booked {
+  background: #fdf0da;
+  border-color: #f3c98a;
+  color: #a05e09;
+}
+
+.slot-settled {
+  background: #dbe8fb;
+  border-color: #a9c6f0;
+  color: #1d4f96;
+}
+
+.slot-dot {
+  font-weight: 800;
+}
+
+.legend {
+  display: flex;
+  gap: 18px;
+  font-size: 13px;
+  color: color-mix(in srgb, #19212e 70%, transparent);
+}
+
+.legend-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  margin-right: 6px;
+}
+
+.legend-dot.free {
+  background: #b7e2c4;
+}
+
+.legend-dot.booked {
+  background: #f3c98a;
+}
+
+.legend-dot.settled {
+  background: #a9c6f0;
+}

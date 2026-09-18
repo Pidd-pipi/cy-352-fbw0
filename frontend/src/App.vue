@@ -8,9 +8,11 @@ import type { OverviewResponse } from "./types";
 import FeatureStrip from "./components/FeatureStrip.vue";
 import MetricGrid from "./components/MetricGrid.vue";
 import OperationsTable from "./components/OperationsTable.vue";
+import BookingView from "./views/BookingView.vue";
 
 const overview = ref<OverviewResponse>(createFallbackOverview());
 const notice = ref(REQUEST_MESSAGES.overviewFallback);
+const activeTab = ref("booking");
 
 function goHealth() {
   window.location.href = REQUEST_MESSAGES.healthPath;
@@ -35,20 +37,31 @@ onMounted(async () => {
       </div>
       <el-button type="primary" @click="goHealth">API Health</el-button>
     </header>
+
+    <div class="tab-bar">
+      <el-radio-group v-model="activeTab">
+        <el-radio-button value="booking">包厢预约与会员结算</el-radio-button>
+        <el-radio-button value="overview">运营总览</el-radio-button>
+      </el-radio-group>
+    </div>
+
     <section class="workspace">
-      <div class="lead-grid">
-        <article class="hero-panel">
-          <span class="pill">{{ notice }}</span>
-          <h2>{{ overview.appName }}</h2>
-          <p>{{ overview.description }}</p>
-        </article>
-        <MetricGrid :items="overview.kpis" />
-      </div>
-      <FeatureStrip :items="overview.features" />
-      <section class="work-panel">
-        <h2>运营任务流</h2>
-        <OperationsTable :records="overview.records" />
-      </section>
+      <BookingView v-if="activeTab === 'booking'" />
+      <template v-else>
+        <div class="lead-grid">
+          <article class="hero-panel">
+            <span class="pill">{{ notice }}</span>
+            <h2>{{ overview.appName }}</h2>
+            <p>{{ overview.description }}</p>
+          </article>
+          <MetricGrid :items="overview.kpis" />
+        </div>
+        <FeatureStrip :items="overview.features" />
+        <section class="work-panel">
+          <h2>运营任务流</h2>
+          <OperationsTable :records="overview.records" />
+        </section>
+      </template>
     </section>
   </main>
 </template>
